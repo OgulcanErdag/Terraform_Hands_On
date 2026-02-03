@@ -200,7 +200,7 @@ Each folder is **self-contained**, includes step-by-step instructions, and can b
 
 ## 🤝 Author
 
-**Ogulcan (Ogi)**  
+**Ogulcan Erdag**  
 Cloud / DevOps focused engineer  
 Hands-on driven • IaC enthusiast • AWS & Terraform practitioner
 
