@@ -19,7 +19,7 @@ At the end of this hands-on training, students will be able to;
 ## Part 1 - Install Terraform
 
 - Launch an EC2 instance using the Amazon Linux 2023 AMI with a security group allowing SSH connections.
-  instance type: "t3a.medium" for terraform extention
+  instance type: "c7i-flex.large" for terraform extention `(for free tier accounts recommended)`
   sec grp:SSH 22
 
 - Connect to your instance with SSH. Remote SSH is better for this Lesson.
@@ -323,7 +323,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so Terraform can
 - terraform plan -out plan1
 - make some changed than
 - terraform plan -out plan2
-- If you do not select any plan during terraform apply ,terraform chooses last configuration .
+- If you do not select any plan during terraform apply ,terraform chooses last configuration.
 ```
 
 - This output shows the execution plan, describing which actions Terraform will take to change the real infrastructure to match the configuration.
