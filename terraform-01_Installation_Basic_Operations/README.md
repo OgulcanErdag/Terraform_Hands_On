@@ -179,7 +179,7 @@ The `provider` block configures the name of the provider, in our case `aws`, whi
 
 The `profile` attribute in your provider block refers to the AWS credentials stored in your AWS Config File, which you created when you configured the AWS CLI. HashiCorp recommends that you never hard-code credentials into `*.tf configuration files`.
 
-- Note: If you delete your AWS credentials from the provider block, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials. 
+- Note: If you delete your AWS credentials from the provider block, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials.
 
 ### Resources
 
@@ -187,10 +187,9 @@ The `resource` block defines a piece of infrastructure. A resource might be a ph
 
 The resource block must have two required datapoints for EC2. : the resource type and the resource name. In the example, the resource type is `aws_instance` and the local name is `tf-ec2`. The prefix of the type maps to the provider. In our case "aws_instance" automatically tells Terraform that it is managed by the "aws" provider.
 
-The arguments for the resource are within the resource block. The arguments could be things like machine sizes, disk image names, or VPC IDs. For your EC2 instance, you specified an AMI for `Amazon Linux 2023`, and the instance type will be `t2.micro`.
+The arguments for the resource are within the resource block. The arguments could be things like machine sizes, disk image names, or VPC IDs. For your EC2 instance, you specified an AMI for `Amazon Linux 2023`, and the instance type will be `t3.micro`.
 
 ![terraform-workflow](terraform-workflow.png)
-
 
 ### Initialize the directory
 
@@ -251,7 +250,7 @@ Terraform will perform the following actions:
       + host_id                      = (known after apply)
       + id                           = (known after apply)
       + instance_state               = (known after apply)
-      + instance_type                = "t2.micro"
+      + instance_type                = "t3.micro"
       + ipv6_address_count           = (known after apply)
       + ipv6_addresses               = (known after apply)
       + key_name                     = (known after apply)
@@ -373,7 +372,7 @@ aws_instance.tf-ec2
 
 - Add key_name = "yourkey" in main.tf . Explane aws key algorithm.
 
-```bash
+````bash
 terraform apply
 
 - Show -->   .tfstate and .tfstate.backup files
@@ -409,7 +408,7 @@ resource "aws_instance" "tf-ec2" {
 resource "aws_s3_bucket" "tf-s3" {
   bucket = "tf-test-bucket-addwhateveryouwant"
 }
-```
+````
 
 - Write your pem file without .pem extension and change the "addwhateveryouwant" part of the bucket name because the bucket name must be unique.
 
