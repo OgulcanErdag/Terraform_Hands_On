@@ -1,6 +1,6 @@
 <img src="terraform.webp">
 
-# Terraform & Terr️Terragrunt Hands-On Labs 🚀
+# Terraform & Terragrunt Hands-On Labs 🚀
 
 This repository contains a **comprehensive, hands-on Terraform & Terragrunt learning series**, designed to build a **solid Infrastructure as Code (IaC) foundation** with real-world AWS use cases.
 
