@@ -206,4 +206,4 @@ Hands-on driven • IaC enthusiast • AWS & Terraform practitioner
 
 ---
 
-🔥 _If you understand and can apply everything in this repository, you are well beyond “Terraform beginner” level._
+🔥 _If you understand and can apply everything in this repository, you have a solid, real-world Terraform & Terragrunt skill set._
