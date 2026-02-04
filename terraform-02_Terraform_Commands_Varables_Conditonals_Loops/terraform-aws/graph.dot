@@ -1,6 +1,0 @@
-digraph G {
-  rankdir = "RL";
-  node [shape = rect, fontname = "sans-serif"];
-  "aws_instance.tf-ec2" [label="aws_instance.tf-ec2"];
-  "aws_s3_bucket.tf-s3" [label="aws_s3_bucket.tf-s3"];
-}
