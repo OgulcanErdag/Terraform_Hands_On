@@ -35,7 +35,8 @@ mkdir terraform-modules && cd terraform-modules && mkdir dev modules prod && cd 
    ├── modules
    │   ├── main.tf
    │   ├── outputs.tf
-   │   └── variables.tf
+   │   ├── variables.tf
+   │   └── versions.tf
    └── prod
        └── prod-vpc.tf
 ```
