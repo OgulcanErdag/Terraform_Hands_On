@@ -80,7 +80,7 @@ resource "aws_subnet" "private_subnet" {
 
 ```go
 variable "environment" {
-  default = "ondia"
+  default = "ogulcan"
 }
 
 variable "vpc_cidr_block" {

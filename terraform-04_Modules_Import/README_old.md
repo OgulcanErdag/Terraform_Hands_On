@@ -79,7 +79,7 @@ resource "aws_subnet" "private_subnet" {
 
 ```go
 variable "environment" {
-  default = "ondia"
+  default = "ogulcan"
 }
 
 variable "vpc_cidr_block" {
@@ -220,7 +220,7 @@ provider "aws" {
 resource "aws_instance" "tf-instances" {
   ami = "ami-04b70fa74e45c3917"
   instance_type = "t3.micro"
-  key_name = "ondia"            // change here
+  key_name = "ogi-us-key"            // change here
   tags = {
     Name = "ubuntu-24.04"
   }
