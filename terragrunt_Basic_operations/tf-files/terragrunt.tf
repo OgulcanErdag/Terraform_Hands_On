@@ -1,47 +1,47 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "~>5.0"
     }
   }
 }
 
 provider "aws" {
-  region  = "us-east-1"
+  region = "us-east-1"
 
 }
 
 locals {
-  user = "oliver"
+  user     = "ogulcan"
   instance = "t3a.medium"
-  mypem = "oliver"
+  mypem    = "ogi-us-key"
 }
 
 data "aws_ami" "amazon_linux2" {
-  most_recent      = true
-  owners           = ["amazon"]
+  most_recent = true
+  owners      = ["amazon"]
 
   filter {
-    name = "virtualization-type"
+    name   = "virtualization-type"
     values = ["hvm"]
   }
   filter {
-    name = "name"
+    name   = "name"
     values = ["al2023-ami-2023*"]
   }
   filter {
-    name = "architecture"
+    name   = "architecture"
     values = ["x86_64"]
   }
 }
 
 resource "aws_instance" "ec2" {
-  ami = data.aws_ami.amazon_linux2.id
-  instance_type = local.instance
-  key_name = local.mypem
+  ami                    = data.aws_ami.amazon_linux2.id
+  instance_type          = local.instance
+  key_name               = local.mypem
   vpc_security_group_ids = [aws_security_group.terra-sg.id]
-  iam_instance_profile = aws_iam_instance_profile.ec2-profile.name
+  iam_instance_profile   = aws_iam_instance_profile.ec2-profile.name
   tags = {
     Name = "terragrunt-${local.user}"
   }
@@ -80,16 +80,16 @@ resource "aws_security_group" "terra-sg" {
   }
 
   ingress {
-    from_port = 22
-    protocol  = "tcp"
-    to_port   = 22
+    from_port   = 22
+    protocol    = "tcp"
+    to_port     = 22
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
-    from_port = 0
-    protocol  = "-1"
-    to_port   = 0
+    from_port   = 0
+    protocol    = "-1"
+    to_port     = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
 }

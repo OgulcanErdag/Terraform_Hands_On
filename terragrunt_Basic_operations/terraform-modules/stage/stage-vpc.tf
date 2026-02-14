@@ -4,7 +4,7 @@ module "tf-vpc" {
   vpc_cidr_block      = "10.4.0.0/16"
   public_subnet_cidr  = "10.4.1.0/24"
   private_subnet_cidr = "10.4.2.0/24"
-  mykey               = "oliver"
+  mykey               = "ogi-us-key"
   instancetype        = "t3.medium"
   myami               = "ami-0557a15b87f6559cf"
   num                 = 1

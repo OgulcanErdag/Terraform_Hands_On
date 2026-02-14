@@ -18,7 +18,7 @@ variable "private_subnet_cidr" {
 }
 
 variable "mykey" {
-  default     = "oliver"
+  default     = "ogi-us-key"
   description = "this is my key pair"
 }
 
